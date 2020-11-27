@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <!-- Post Content Column -->
+    <div class="col-lg-8">
+      <!-- Title -->
+      <h1 class="mt-4">{{ post.title }}</h1>
+
+
+      <p class="lead">una publicación de <a routerLink="/profile/{{post.userId}}">Autor<!--{{getAuthor(post.userId)}}--></a></p>
+      <hr>
+
+      <!-- Date/Time -->
+      <p> Publicado el  {{ post.createdAt }}</p>
+
+      <!-- Update Time -->
+      <p> Ultima vez actualizado {{post.updatedAt}}</p>
+
+      <hr>
+
+      <!-- Description Post -->
+      <p>{{post.description}}</p>
+
+      <!-- Preview Image -->
+      <img class="img-fluid rounded" src="https://placehold.it/900x300" alt="">
+
+      <hr>
+
+      <!-- Post Conte -->
+      <p> {{post.content}} </p>
+
+      <app-list-comments [postId]=postId></app-list-comments>
+
+    </div>
+
+    <!-- Sidebar Widgets Column -->
+    <div class="col-md-4">
+
+      <!-- Search Widget -->
+      <div class="card my-4">
+        <h5 class="card-header">Search</h5>
+        <div class="card-body">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-append">
+                <button class="btn btn-secondary" type="button">Go!</button>
+              </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hashtag Widget -->
+      <app-list-hashtags [postId]=postId></app-list-hashtags>
+
+      <!-- Side Widget -->
+      <div class="card my-4">
+        <h5 class="card-header">Side Widget</h5>
+        <div class="card-body">
+          You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->

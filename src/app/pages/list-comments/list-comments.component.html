@@ -1,0 +1,23 @@
+<!-- Comments Form -->
+<div class="card my-4">
+  <h5 class="card-header">Deja un comentario</h5>
+  <div class="card-body">
+      <div class="form-group">
+        <input placeholder="Escribe un comentario aqui..."
+               type="text"
+               required
+               [(ngModel)]="content"
+        >
+        <button type="submit" class="btn btn-primary" (click)="addComment()">Enviar</button>
+      </div>
+  </div>
+</div>
+
+<!-- Single Comment -->
+<div *ngFor="let comment of comments" class="media mb-4">
+  <img class="d-flex mr-3 rounded-circle" src="https://placehold.it/50x50" alt="">
+  <div class="media-body">
+    <h5 class="mt-0">Usuario ({{ comment.createdAt }})</h5>
+    {{ comment.content }}
+  </div>
+</div>

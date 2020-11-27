@@ -1,0 +1,12 @@
+<!-- Hashtags Widget -->
+<div class="card my-4">
+  <h5 class="card-header">Hashtags</h5>
+  <div class="card-body">
+    <div class="row">
+      <p *ngFor = "let hashtag of hashtags" class="hashtag-list">
+        <strong>#{{hashtag.name}}</strong>
+      </p>
+    </div>
+    <p *ngIf="postId">* se muestra los hashtags asociados a este post</p>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Heading Row -->
+  <div class="row align-items-center my-5">
+    <div class="col-lg-6">
+      <h1 class="font-weight-light">{{user.firstName}} {{user.lastName}}</h1>
+      <p>Miembro desde {{user.createdAt}}</p>
+      <p><strong>{{user.subscribers}}</strong> subscriptores</p>
+      <p><strong>{{user.subscriptions}}</strong> subscripciones</p>
+      <a class="btn btn-primary" href="#">Suscribirse</a>
+    </div>
+    <!-- /.col-md-4 -->
+    <div class="col-lg-6">
+      <img class="img-fluid rounded mb-4 mb-lg-0" src="https://placehold.it/900x400" alt="">
+    </div>
+    <!-- /.col-lg-8 -->
+  </div>
+  <!-- /.row -->
+
+  <!-- Call to Action Well -->
+  <div class="card text-white bg-secondary my-5 py-4 text-center">
+    <div class="card-body">
+      <p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p>
+    </div>
+  </div>
+
+  <!-- Content Row - List of posts -->
+  <div class="row">
+    <div *ngFor="let post of posts" class="col-md-4 mb-5">
+      <div class="card h-100">
+        <div class="card-body">
+          <h4 class="card-title">{{ post.title }}</h4>
+          <p class="card-text"> {{ post.description }} </p>
+        </div>
+        <div class="card-footer">
+          <a class="btn btn-primary btn-sm" routerLink="/post/{{ post.id }}">Ver post</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.container -->
