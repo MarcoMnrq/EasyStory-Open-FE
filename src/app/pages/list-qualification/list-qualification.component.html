@@ -1,0 +1,23 @@
+<!-- Qualification Form -->
+<div class="card my-4">
+  <h5 class="card-header">Deja una calificación</h5>
+  <div class="card-body">
+    <div class="form-group">
+      <input placeholder="Escribe un calificación aqui..."
+             type="number"
+             required
+             [(ngModel)]="qualification"
+      >
+      <button type="submit" class="btn btn-primary" (click)="addQualifications()">Enviar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Single Qualification -->
+<div *ngFor="let qualification of qualifications" class="media mb-4">
+  <img class="d-flex mr-3 rounded-circle" src="https://placehold.it/50x50" alt="">
+  <div class="media-body">
+    <h5 class="mt-0">Usuario ({{ qualification.createdAt }})</h5>
+    {{ qualification.qualification }}
+  </div>
+</div>

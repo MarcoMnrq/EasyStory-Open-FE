@@ -5,10 +5,22 @@
   <div class="row align-items-center my-5">
     <div class="col-lg-6">
       <h1 class="font-weight-light">{{user.firstName}} {{user.lastName}}</h1>
-      <p>Miembro desde {{user.createdAt}}</p>
+        <p>Miembro desde {{user.createdAt}}</p>
       <p><strong>{{user.subscribers}}</strong> subscriptores</p>
       <p><strong>{{user.subscriptions}}</strong> subscripciones</p>
-      <a class="btn btn-primary" href="#">Suscribirse</a>
+      <div *ngIf="suscrito == false && this.userNow!=this.userId">
+        <a class="btn btn-primary" (click)=addNewSubscription() href="/profile/{{ user.id }}">Suscribirse</a>
+      </div>
+      <div *ngIf="suscrito == true && this.userNow!=this.userId">
+        <a class="btn btn-primary" (click)=removeSubscription() href="/profile/{{ user.id }}">Desuscribirse</a>
+      </div>
+
+      <br>
+
+      <div *ngIf="this.userId == 1">
+        <a class="btn btn-primary" href="/profile/{{user.id}}/edit">Editar perfil</a>
+      </div>
+
     </div>
     <!-- /.col-md-4 -->
     <div class="col-lg-6">
@@ -42,3 +54,4 @@
   <!-- /.row -->
 </div>
 <!-- /.container -->
+

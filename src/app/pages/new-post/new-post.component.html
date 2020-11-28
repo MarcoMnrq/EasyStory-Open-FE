@@ -1,0 +1,18 @@
+<div class="card my-4">
+  <h1 class="card-header">Escriba el titulo: </h1>
+  <div class="form-group">
+    <input placeholder="Escriba su titulo aquí..." type="text" class="form-control form-control-lg" required [(ngModel)]="content.title">
+  </div>
+
+
+  <h2 class="card-header">Escriba la descripción: </h2>
+  <div class="form-group">
+    <input placeholder="Escriba su descripción aquí..." type="text" class="form-control" required [(ngModel)]="content.description">
+  </div>
+
+  <h3 class="card-header">Escriba el contenido: </h3>
+  <div class="form-group">
+    <input placeholder="Escriba su contenido aquí..." type="text" class="form-control form-control-sm" required [(ngModel)]="content.content">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="addNewPost()" routerLink="/profile/1">Submit</button>
+</div>

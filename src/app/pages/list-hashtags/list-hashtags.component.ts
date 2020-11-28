@@ -10,6 +10,7 @@ import {Hashtag} from '../../models/hashtag';
 })
 export class ListHashtagsComponent implements OnInit {
   @Input() postId: number;
+
   hashtags: Hashtag[];
   constructor(private httpDataService: HttpDataService, private router: Router) { }
 

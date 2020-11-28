@@ -1,0 +1,28 @@
+<div class="card my-4">
+  <h3 class="card-header">Ingrese su nuevo usuario: </h3>
+  <div class="form-group">
+    <input placeholder="Escriba su usuario aquí..." type="text" class="form-control form-control-lg" required [(ngModel)]="content.username">
+  </div>
+  <h3 class="card-header">Ingrese su nueva contraseña: </h3>
+  <div class="form-group">
+    <input placeholder="Escriba su conraseña aquí..." type="text" class="form-control" required [(ngModel)]="content.password">
+  </div>
+  <h3 class="card-header">Ingrese su nuevo nombre: </h3>
+  <div class="form-group">
+    <input placeholder="Escriba su nombre aquí..." type="text" class="form-control" required [(ngModel)]="content.firstName">
+  </div>
+  <h3 class="card-header">Ingrese su nuevo apellido: </h3>
+  <div class="form-group">
+    <input placeholder="Escriba su apellido aquí..." type="text" class="form-control form-control-sm" required [(ngModel)]="content.lastName">
+  </div>
+  <h3 class="card-header">Ingrese su nuevo email: </h3>
+  <div class="form-group">
+    <input placeholder="Escriba su email aquí..." type="text" class="form-control form-control-sm" required [(ngModel)]="content.email">
+  </div>
+  <h3 class="card-header">Ingrese su nuevo telefono: </h3>
+  <div class="form-group">
+    <input placeholder="Escriba su telefono aquí..." type="text" class="form-control form-control-sm" required [(ngModel)]="content.telephone">
+  </div>
+
+  <a class="btn btn-primary btn-sm" type="submit" class="btn btn-primary" href="profile/{{userId}}" (click)="editProfile()">Submit</a>
+</div>

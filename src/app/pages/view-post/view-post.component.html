@@ -6,7 +6,7 @@
       <h1 class="mt-4">{{ post.title }}</h1>
 
 
-      <p class="lead">una publicación de <a routerLink="/profile/{{post.userId}}">Autor<!--{{getAuthor(post.userId)}}--></a></p>
+      <p class="lead">una publicación de <a routerLink="/profile/{{post.userId}}">{{post.user.username}}<!--{{getAuthor(post.userId)}}--></a></p>
       <hr>
 
       <!-- Date/Time -->
@@ -24,6 +24,34 @@
       <img class="img-fluid rounded" src="https://placehold.it/900x300" alt="">
 
       <hr>
+
+      <div *ngIf="alreadyBookmark;else elseblock">
+        <a class="btn btn-primary" (click)="addBookmark()" href="/post/{{postId}}">Añadir a favoritos</a>
+        <br>
+      </div>
+      <ng-template #elseblock>
+        <a class="btn btn-primary" (click)="removeBookmark()" href="/post/{{postId}}">Quitar de favoritos</a>
+        <br>
+      </ng-template>
+      <br>
+
+      <div *ngIf="canBeEdited">
+        <div>
+          <a class="btn btn-primary" href="post/{{this.postId}}/hashtags">
+             Agregar  Hashtags
+          </a>
+        </div>
+        <br>
+        <div>
+          <a class="btn btn-primary" href="/post/{{this.postId}}/edit">Editar post</a>
+        </div>
+        <br>
+        <div>
+          <a class="btn btn-danger" href="/profile/{{this.userId}}" (click)="deletePost()">Eliminar Post</a>
+        </div>
+      </div>
+      <hr>
+
 
       <!-- Post Conte -->
       <p> {{post.content}} </p>
@@ -50,12 +78,14 @@
 
       <!-- Hashtag Widget -->
       <app-list-hashtags [postId]=postId></app-list-hashtags>
+      <app-list-qualification [postId]="postId"></app-list-qualification>
+
 
       <!-- Side Widget -->
       <div class="card my-4">
-        <h5 class="card-header">Side Widget</h5>
+        <h5 class="card-header">Consejo del dia!</h5>
         <div class="card-body">
-          You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+          “No tenía miedo a las dificultades: lo que la asustaba era la obligación de tener que escoger un camino. Escoger un camino significaba abandonar otros.”Paulo Coelho.
         </div>
       </div>
 

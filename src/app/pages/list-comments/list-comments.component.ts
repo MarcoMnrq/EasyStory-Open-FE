@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Comment} from '../../models/comment';
 import {HttpDataService} from '../../services/http-data.service';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'app-list-comments',
@@ -12,6 +13,7 @@ export class ListCommentsComponent implements OnInit {
   comments: Comment[];
   content: string;
   author: string;
+  user: User;
   constructor(private httpDataService: HttpDataService) { }
 
   ngOnInit(): void {
@@ -48,4 +50,11 @@ export class ListCommentsComponent implements OnInit {
       return 'error';
     }
   }
+  removeComment(commentId): void {
+    this.httpDataService.removeComment(commentId).subscribe((response: any) => {
+      this.ngOnInit();
+    });
+  }
+
+
 }

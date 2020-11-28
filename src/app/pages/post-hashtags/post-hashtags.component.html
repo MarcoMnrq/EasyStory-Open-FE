@@ -1,0 +1,25 @@
+<a class="btn btn-primary" href="/post/{{postId}}" role="button">Regresar al post</a>
+<br>
+
+<div class="card-body">
+    <p>Hashtags asignados a este post:</p>
+  <div class="row">
+    <p *ngFor = "let tag of postHashtags" class="hashtag-list">
+      <a class="btn btn-secondary" (click)="unassignHashtag(tag.id)">
+        <strong>#{{tag.name}}</strong>
+      </a>
+    </p>
+  </div>
+</div>
+<br>
+<br>
+<div class="card-body">
+  <p>Hashtags de easystory:</p>
+  <div class="row">
+    <p *ngFor = "let hashtag of hashtags" class="hashtag-list">
+      <a class="btn btn-secondary" (click)="assignHashtag(hashtag.id)">
+        <strong>#{{hashtag.name}}</strong>
+      </a>
+    </p>
+  </div>
+</div>

@@ -4,9 +4,10 @@
   <div class="card-body">
     <div class="row">
       <p *ngFor = "let hashtag of hashtags" class="hashtag-list">
-        <strong>#{{hashtag.name}}</strong>
+        <a class="btn btn-secondary" routerLink="/hashtag/{{hashtag.id}}">
+          <strong>#{{hashtag.name}}</strong>
+        </a>
       </p>
     </div>
-    <p *ngIf="postId">* se muestra los hashtags asociados a este post</p>
   </div>
 </div>

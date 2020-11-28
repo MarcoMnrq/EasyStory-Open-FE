@@ -1,0 +1,36 @@
+<!-- Qualification Form -->
+<div class="card my-4">
+  <h5 class="card-header">Edita el post</h5>
+  <div class="card-body">
+    <div class="row-cols-1">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Ingrese el titulo</span>
+        </div>
+        <textarea class="form-control" aria-label="With textarea" [(ngModel)]="content.title"></textarea>
+      </div>
+      <br>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Ingrese la descripción: </span>
+        </div>
+        <textarea class="form-control" aria-label="With textarea" [(ngModel)]="content.description"></textarea>
+      </div>
+      <br>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Ingrese el contenido: </span>
+        </div>
+        <textarea class="form-control" aria-label="With textarea" [(ngModel)]="content.content"></textarea>
+      </div>
+      <br>
+      <a class="btn btn-primary" href="post/{{postId}}" (click)="updatePost()">Enviar</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

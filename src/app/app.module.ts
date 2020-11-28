@@ -13,7 +13,16 @@ import { ListHashtagsComponent } from './pages/list-hashtags/list-hashtags.compo
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { BookmarksComponent } from './pages/bookmarks/bookmarks.component';
 import { ListCommentsComponent } from './pages/list-comments/list-comments.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NewPostComponent } from './pages/new-post/new-post.component';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { LoginComponent} from './pages/login/login.component';
+import { RegisterComponent} from './pages/register/register.component';
+import {authInterceptorProviders} from './helpers/auth.interceptor';
+import { EditPostsComponent } from './pages/edit-posts/edit-posts.component';
+import {ListQualificationsComponent} from './pages/list-qualification/list-qualification.component';
+import { PostHashtagsComponent } from './pages/post-hashtags/post-hashtags.component';
+import { HashtagSearchComponent } from './pages/hashtag-search/hashtag-search.component';
 
 enableProdMode();
 
@@ -26,17 +35,26 @@ enableProdMode();
     ListHashtagsComponent,
     PageNotFoundComponent,
     BookmarksComponent,
-    ListCommentsComponent
+    ListCommentsComponent,
+    NewPostComponent,
+    EditProfileComponent,
+    RegisterComponent,
+    LoginComponent,
+    EditPostsComponent,
+    ListQualificationsComponent,
+    PostHashtagsComponent,
+    HashtagSearchComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        MatCardModule,
-        FormsModule
-    ],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
